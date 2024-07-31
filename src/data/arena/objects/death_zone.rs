@@ -1,7 +1,9 @@
 use bevy::prelude::*;
+use serde::{Deserialize, Serialize};
 
 use crate::data::death_zone::DeathZoneBundle;
 
+#[derive(Serialize, Deserialize)]
 pub struct DeathZoneObject {
     pub position: Vec2,
 }

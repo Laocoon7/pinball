@@ -5,6 +5,7 @@ pub mod flipper;
 pub mod pinball;
 pub mod score;
 pub mod shooter;
+pub mod spawner;
 pub mod wall;
 
 pub mod constants;

@@ -3441,6 +3441,7 @@ dependencies = [
  "bevy_rapier2d",
  "mlua",
  "rand",
+ "ron",
  "serde",
 ]
 

@@ -4,8 +4,11 @@ version = "0.1.0"
 edition = "2021"
 
 [features]
-# default = ["dev"]
+default = ["dev"] # leave enabled for autocomplete
 dev = [ "bevy_rapier2d/debug-render-2d", "dep:bevy-inspector-egui" ]
+
+[profile.dev.package.bevy_rapier2d]
+opt-level = 3
 
 [dependencies]
 anyhow = "1"
@@ -15,4 +18,5 @@ bevy_asset_loader = { version = "0.21", features = ["2d"] }
 bevy_rapier2d = { version = "0.27", default-features = false, features = ["dim2", "async-collider", "serde-serialize"] } # possibly add "parallel", "simd-stable", "simd-nightly", "enhanced-determinism"
 mlua = { version = "0.9.5", features = ["lua54", "macros", "serialize"] } # possibly add "async", "send"
 rand = "0.8"
+ron = "0.8"
 serde = { version = "1", features = ["derive"] }

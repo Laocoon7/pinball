@@ -1,0 +1,84 @@
+(
+    width: 936,
+    height: 1260,
+    objects: [
+        Bumper((
+            position: (-350.0, 350.0),
+        )),
+        Bumper((
+            position: (-150.0, 450.0),
+        )),
+        Bumper((
+            position: (50.0, 350.0),
+        )),
+        Bumper((
+            position: (-150.0, -150.0),
+        )),
+        Bumper((
+            position: (-0.0, -400.0),
+        )),
+        DeathZone((
+            position: (0.0, -598.0),
+        )),
+        Flipper((
+            group: Left,
+            position: (-250.0, -350.0),
+            scale: Some((0.75, 0.75)),
+        )),
+        Flipper((
+            group: Right,
+            position: (250.0, -350.0),
+            scale: Some((0.75, 0.75)),
+        )),
+        Shooter((
+            position: (396.0, -50.0),
+        )),
+        Spawner((
+            position: (396.0, 350.0),
+        )),
+        Wall((
+            start: (-468.0, -614.0),
+            end: (468.0, -614.0),
+        )),
+        Wall((
+            start: (452.0, -630.0),
+            end: (452.0, 630.0),
+        )),
+        Wall((
+            start: (468.0, 614.0),
+            end: (-468.0, 614.0),
+        )),
+        Wall((
+            start: (-452.0, 630.0),
+            end: (-452.0, -630.0),
+        )),
+        Wall((
+            start: (-452.0, -582.0),
+            end: (-100.0, -614.0),
+        )),
+        Wall((
+            start: (452.0, -582.0),
+            end: (100.0, -614.0),
+        )),
+        Wall((
+            start: (380.0, -50.0),
+            end: (380.0, 400.0),
+        )),
+        Wall((
+            start: (-250.0, -300.0),
+            end: (-250.0, -150.0),
+        )),
+        Wall((
+            start: (-250.0, -150.0),
+            end: (-350.0, 200.0),
+        )),
+        Wall((
+            start: (250.0, -300.0),
+            end: (250.0, -150.0),
+        )),
+        Wall((
+            start: (250.0, -150.0),
+            end: (380.0, -50.0),
+        )),
+    ],
+)

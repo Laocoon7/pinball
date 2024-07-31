@@ -1,10 +1,12 @@
 use bevy::prelude::*;
+use serde::{Deserialize, Serialize};
 
 use crate::{data::wall::WallBundle, library::resources::Library};
 
+#[derive(Serialize, Deserialize)]
 pub struct WallObject {
-    start: Vec2,
-    end: Vec2,
+    pub start: Vec2,
+    pub end: Vec2,
 }
 
 impl WallObject {

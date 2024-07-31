@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use bevy_rapier2d::prelude::*;
 
-use crate::dev::systems::handle_dev_input;
+use crate::dev::systems::{dump_current_arena, handle_dev_input};
 
 pub struct DevPlugin;
 impl Plugin for DevPlugin {
@@ -16,5 +16,6 @@ impl Plugin for DevPlugin {
         ));
 
         app.add_systems(Update, handle_dev_input);
+        app.add_systems(Update, dump_current_arena);
     }
 }

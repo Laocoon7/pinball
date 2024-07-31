@@ -6,6 +6,7 @@ use crate::{
         flipper::{Flipper, FlipperGroup},
         pinball::{Pinball, PinballBundle},
         score::Score,
+        spawner::Spawner,
     },
     library::resources::Library,
 };
@@ -16,8 +17,12 @@ pub fn handle_input(
     keys: Res<ButtonInput<KeyCode>>,
     time: Res<Time>,
     mut score: ResMut<Score>,
-    mut q_flippers: Query<(&mut Transform, &mut Flipper, &FlipperGroup)>,
-    q_pinballs: Query<Entity, With<Pinball>>,
+    mut q_flippers: Query<
+        (&mut Transform, &mut Flipper, &FlipperGroup),
+        (Without<Pinball>, Without<Spawner>),
+    >,
+    q_pinballs: Query<Entity, (With<Pinball>, Without<Spawner>)>,
+    q_spawners: Query<&Transform, (With<Spawner>, Without<Pinball>)>,
     mut e_app_exit: EventWriter<AppExit>,
 ) {
     let rotation_increment = time.delta_seconds() * FLIPPER_SPEED;
@@ -54,6 +59,11 @@ pub fn handle_input(
         && q_pinballs.iter().len() == 0
     {
         **score = 0;
-        commands.spawn(PinballBundle::new(&library, Vec2::new(396.0, 350.0)));
+        for spawner_transform in q_spawners.iter() {
+            commands.spawn(PinballBundle::new(
+                &library,
+                spawner_transform.translation.truncate(),
+            ));
+        }
     }
 }

@@ -48,7 +48,7 @@ impl WallBundle {
             restitution: Restitution::coefficient(WALL_RESTITUTION),
             sprite_bundle,
             atlas,
-            wall: Wall,
+            wall: Wall::new(start, end),
         }
     }
 }

@@ -1,5 +1,5 @@
-mod arena;
-pub use self::arena::*;
+mod arena_object;
+pub use self::arena_object::*;
 
 mod bumper;
 pub use self::bumper::*;
@@ -13,8 +13,8 @@ pub use self::flipper::*;
 mod shooter;
 pub use self::shooter::*;
 
+mod spawner;
+pub use self::spawner::*;
+
 mod wall;
 pub use self::wall::*;
-
-mod lua_object;
-pub use self::lua_object::*;

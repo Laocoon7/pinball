@@ -1,5 +1,8 @@
 use bevy::{color::palettes::css, prelude::*};
 
+// Paths
+pub const DEFAULT_ARENA: &str = "assets/arenas/default.arena";
+
 // Window
 pub const WINDOW_WIDTH: f32 = 936.0;
 pub const WINDOW_WIDTH_HALF: f32 = WINDOW_WIDTH * 0.5;

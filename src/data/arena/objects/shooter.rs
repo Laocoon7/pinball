@@ -1,7 +1,9 @@
 use bevy::prelude::*;
+use serde::{Deserialize, Serialize};
 
 use crate::{data::shooter::ShooterBundle, library::resources::Library};
 
+#[derive(Serialize, Deserialize)]
 pub struct ShooterObject {
     pub position: Vec2,
 }
