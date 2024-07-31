@@ -1,5 +1,6 @@
 #![allow(clippy::module_inception)]
 #![allow(clippy::type_complexity)]
+#![allow(clippy::too_many_arguments)]
 
 use bevy::{prelude::*, window::WindowResolution};
 use bevy_rapier2d::prelude::*;

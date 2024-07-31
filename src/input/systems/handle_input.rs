@@ -5,6 +5,7 @@ use crate::{
         constants::FLIPPER_SPEED,
         flipper::{Flipper, FlipperGroup},
         pinball::{Pinball, PinballBundle},
+        score::Score,
     },
     library::resources::Library,
 };
@@ -14,6 +15,7 @@ pub fn handle_input(
     library: Res<Library>,
     keys: Res<ButtonInput<KeyCode>>,
     time: Res<Time>,
+    mut score: ResMut<Score>,
     mut q_flippers: Query<(&mut Transform, &mut Flipper, &FlipperGroup)>,
     q_pinballs: Query<Entity, With<Pinball>>,
     mut e_app_exit: EventWriter<AppExit>,
@@ -51,6 +53,7 @@ pub fn handle_input(
         && (keys.pressed(KeyCode::ControlLeft) || keys.pressed(KeyCode::ControlRight))
         && q_pinballs.iter().len() == 0
     {
+        **score = 0;
         commands.spawn(PinballBundle::new(&library, Vec2::new(396.0, 350.0)));
     }
 }

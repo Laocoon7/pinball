@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use bevy_rapier2d::prelude::*;
 
-use crate::data::{bumper::Bumper, pinball::Pinball, score::resources::Score};
+use crate::data::{bumper::Bumper, pinball::Pinball, score::Score};
 
 pub fn add_score(
     rapier_context: Res<RapierContext>,
@@ -15,7 +15,6 @@ pub fn add_score(
             let other = if pair.collider1() == entity { pair.collider2() } else { pair.collider1() };
             if pinballs.contains(&other) {
                 **score += bumper.score;
-                info!("Score: {}", **score);
             }
         }
     }

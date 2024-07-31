@@ -10,6 +10,7 @@ use crate::{
         death_zone::DeathZoneBundle,
         flipper::FlipperBundle,
         pinball::PinballBundle,
+        score::ScoreUiBundle,
         shooter::ShooterBundle,
         wall::WallBundle,
     },
@@ -70,6 +71,9 @@ pub fn build_arena(mut commands: Commands, library: Res<Library>) {
     commands.spawn(BumperBundle::new(&library, Vec2::new(-350.0, 350.0)));
     commands.spawn(BumperBundle::new(&library, Vec2::new(-150.0, 450.0)));
     commands.spawn(BumperBundle::new(&library, Vec2::new(50.0, 350.0)));
+
+    // Add Score Ui
+    commands.spawn(ScoreUiBundle::new(Vec2::new(WINDOW_LEFT, WINDOW_TOP)));
 
     // Add flippers
     commands.spawn(FlipperBundle::new_left(

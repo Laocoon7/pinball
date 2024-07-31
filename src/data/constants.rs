@@ -1,3 +1,5 @@
+use bevy::{color::palettes::css, prelude::*};
+
 // Window
 pub const WINDOW_WIDTH: f32 = 936.0;
 pub const WINDOW_WIDTH_HALF: f32 = WINDOW_WIDTH * 0.5;
@@ -9,6 +11,7 @@ pub const WINDOW_BOTTOM: f32 = -WINDOW_HEIGHT_HALF;
 pub const WINDOW_TOP: f32 = WINDOW_HEIGHT_HALF;
 
 // Layers
+pub const UI_LAYER: f32 = 1.0;
 pub const DEFAULT_LAYER: f32 = 0.0;
 
 // Arena
@@ -56,3 +59,7 @@ pub const SHOOTER_SIZE: f32 = 129.0;
 pub const SHOOTER_SIZE_HALF: f32 = SHOOTER_SIZE * 0.5;
 pub const SHOOTER_SCALE: f32 = 1.0;
 pub const SHOOTER_RESTITUTION: f32 = 10.0;
+
+// UI
+pub const SCORE_UI_FONT_SIZE: f32 = 20.0;
+pub const SCORE_UI_COLOR: Color = Color::Srgba(css::RED);
