@@ -3,7 +3,5 @@
 {
   "files.associations": {
     "*.settings": "toml",
-    "*.atlas": "ron",
-    "*.image": "ron",
   }
 }
