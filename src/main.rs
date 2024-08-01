@@ -13,7 +13,6 @@ pub mod data;
 pub mod dev;
 pub mod input;
 pub mod library;
-pub mod lua;
 
 const PIXELS_PER_METER: f32 = 100.0; // Default from examples
 const GRAVITY: f32 = 9.81 * PIXELS_PER_METER;
@@ -47,7 +46,6 @@ fn main() {
     app.add_plugins(data::DataPlugin);
     app.add_plugins(input::InputPlugin);
     app.add_plugins(library::LibraryPlugin);
-    app.add_plugins(lua::LuaPlugin);
 
     // Run
     app.run();
